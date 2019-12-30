@@ -1,6 +1,5 @@
 package com.epam.homework2;
 
-
 import java.util.Scanner;
 
 public class Task1 {
@@ -12,9 +11,17 @@ public class Task1 {
         System.out.println("TASK 1");
         System.out.println("Write down a number: ");
         setNumber(scanner.nextInt());
-        StringBuilder current = new StringBuilder(String.valueOf(getNumber()));
-        current.reverse();
-        setReverseNumber(Integer.parseInt(current.toString()));
+//        StringBuilder current = new StringBuilder(String.valueOf(getNumber()));
+//        current.reverse();
+//        setReverseNumber(Integer.parseInt(current.toString()));
+
+        int temp = getNumber();
+        int result = 0;
+        for (int i = 2; i >= 0; i--) {
+            result += (temp % 10) * Math.pow(10, i);
+            temp /= 10;
+        }
+        setReverseNumber(result);
 
     }
 
