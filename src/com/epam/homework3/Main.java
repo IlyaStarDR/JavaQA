@@ -21,6 +21,10 @@ public class Main {
                 thirdTask();
                 break;
             case 4:
+                System.out.println("FOURTH FIGURE:");
+                fourthTask();
+                break;
+            case 5:
                 System.out.println("FIFTH FIGURE:");
                 fifthTask();
                 break;
