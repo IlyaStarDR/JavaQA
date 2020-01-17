@@ -6,9 +6,9 @@ public class UniqueCharacters {
     private String string; // initialization variable of string
 
     public void process() {
-        Scanner scanner = new Scanner(System.in);               // input string
+        Scanner scanner = new Scanner(System.in);
         setString(scanner.nextLine());                          // setting value of string via scanner
-        System.out.println(getUniqueCharacters(getString()));   // printing of result
+        System.out.println(getUniqueCharacters(getString()));   // printing the result
     }
 
 //    private String getUniqueCharacters(String string) {       // method using for loops
