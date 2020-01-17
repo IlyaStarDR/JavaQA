@@ -1,4 +1,4 @@
-package com.epam.homework4;
+package com.epam.homework4.task1;
 
 import java.util.Scanner;
 
