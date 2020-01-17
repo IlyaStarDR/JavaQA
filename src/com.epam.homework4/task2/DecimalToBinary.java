@@ -7,8 +7,10 @@ public class DecimalToBinary {
 
 
     public void process() {
+        System.out.println("Enter decimal number to convert to binary:");
         Scanner scanner = new Scanner(System.in);
         setDecimal(scanner.nextInt());              // setting value of string via scanner
+        System.out.println("Result:");
         System.out.println(getBinary());            // printing the result
     }
 

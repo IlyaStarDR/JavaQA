@@ -7,7 +7,9 @@ public class UniqueCharacters {
 
     public void process() {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the line:");
         setString(scanner.nextLine());                          // setting value of string via scanner
+        System.out.println("Unique chars of line are:");
         System.out.println(getUniqueCharacters(getString()));   // printing the result
     }
 
