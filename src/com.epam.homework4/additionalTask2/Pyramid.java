@@ -9,8 +9,7 @@ public class Pyramid {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter height of pyramid:");
         setHeight(scanner.nextInt());
-        System.out.println("The result is:");
-        System.out.println(getPyramid());
+        System.out.printf("The result is: \n%s", getPyramid());
     }
 
     private String getPyramid() {
