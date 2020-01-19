@@ -9,8 +9,8 @@ public class UniqueCharacters {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the line:");
         setString(scanner.nextLine());                          // setting value of string via scanner
-        System.out.println("Unique chars of line are:");
-        System.out.println(getUniqueCharacters(getString()));   // printing the result
+        System.out.printf("Unique chars of line are: \n%s",     // printing the result
+                getUniqueCharacters());
     }
 
 //    private String getUniqueCharacters(String string) {       // method using for loops
@@ -26,16 +26,16 @@ public class UniqueCharacters {
 //        return currentString.replaceAll("\020", "");
 //    }
 
-    private String getUniqueCharacters(String string) { // method using while loops
-        String currentString = string;                  // initialization of temporary string
+    private String getUniqueCharacters() { // method using while loops
+        String currentString = getString();                  // initialization of temporary string
         char currentChar;                               // and char values
         int i = 0;                                      // increment of external loop
-        while (i < string.length()) {
-            currentChar = string.charAt(i);
+        while (i < getString().length()) {
+            currentChar = getString().charAt(i);
             int j = i + 1;                              // increment of internal loop
-            while (j < string.length()) {
-                if (currentChar == string.charAt(j)) {  // comparing chars in string
-                    currentString = currentString.replace(string.charAt(j), '\u0020')
+            while (j < getString().length()) {
+                if (currentChar == getString().charAt(j)) {  // comparing chars in string
+                    currentString = currentString.replace(getString().charAt(j), '\u0020')
                             .replaceAll(" ", ""); // replacing identical characters with a spaces
                 }                                                   // and spaces with empty char
                 j++;

@@ -9,8 +9,8 @@ public class ReverseLastTwoNumbers {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter int number:");
         setNumber(scanner.nextInt());                       // setting value of int via scanner
-        System.out.println("The result is:");
-        System.out.println(getReversedTwoLastNumbers());    // printing the result
+        System.out.printf("The result is: \n%s",            // printing the result
+                getReversedTwoLastNumbers());
     }
 
     private String getReversedTwoLastNumbers() {
