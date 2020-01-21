@@ -9,15 +9,24 @@ public class FirstCharOfCertainWord {
     public void process() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter line:");
-        setLine(scanner.nextLine());                // setting value of line
+        setLine(scanner.nextLine());
         System.out.println("Enter number of word");
-        setNumberOfWord(scanner.nextInt());         // setting number of word
-        System.out.printf("The result is: \n%c", firstChar());            // output result
+        setNumberOfWord(scanner.nextInt());
+        if (splittedLine(line).length < numberOfWord || numberOfWord < 0) {
+            System.out.println("False number of word!!!");
+        }
+        else {
+            System.out.printf("The result is: \n%c", firstChar());
+        }
     }
 
     private char firstChar() {
-        String[] arrOfWords = getLine().split(" ");   // splits a string into an array of words
-        return arrOfWords[getNumberOfWord() - 1].charAt(0); // returns first char of n word
+        String[] arrOfWords = splittedLine(line);
+        return arrOfWords[numberOfWord - 1].charAt(0);
+    }
+
+    private String[] splittedLine(String line) {
+        return line.split("\u0020");
     }
 
     private String getLine() {

@@ -15,7 +15,7 @@ public class ReverseLastTwoNumbers {
 
     private String getReversedTwoLastNumbers() {
 
-        StringBuilder numberToString = new StringBuilder(String.valueOf(getNumber()));  // parsing int to StringBuilder
+        StringBuilder numberToString = new StringBuilder(String.valueOf(number));  // parsing int to StringBuilder
         if (numberToString.length() == 1) {
             return numberToString.toString();
         }

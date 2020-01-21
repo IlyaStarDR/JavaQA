@@ -11,34 +11,24 @@ public class DecimalToBinary {
         Scanner scanner = new Scanner(System.in);
         setDecimal(scanner.nextInt());                   // setting value of string via scanner
         System.out.printf("Result: \n%s", getBinary()); // printing the result
-
     }
 
-    private String getReverseBinary() {   // method returns reverse binary number
+    private String getBinary() {   // method returns binary number
         String reverseBinary = "";
-        int currDec = getDecimal();
+        int currDec = decimal;
         while (currDec >= 1) {
-            reverseBinary += currDec % 2;
+            reverseBinary = (currDec % 2) + reverseBinary;
             currDec /= 2;
         }
         return reverseBinary;
     }
 
-    private String getBinary() {          // method returns right binary
-        String binary = "";
-        int i = getReverseBinary().length() - 1;
-        while (i >= 0) {
-            binary += getReverseBinary().charAt(i);
-            i--;
-        }
-        return binary;
-    }
 
-    public int getDecimal() { // getter
+    public int getDecimal() {
         return decimal;
     }
 
-    public void setDecimal(int decimal) { // setter
+    public void setDecimal(int decimal) {
         this.decimal = decimal;
     }
 }

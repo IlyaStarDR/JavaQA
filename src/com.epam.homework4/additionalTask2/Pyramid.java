@@ -16,20 +16,20 @@ public class Pyramid {
         String pyramid = "";
 
         int i = 0;
-        int height = 1;
+        int currHeight = 1;
 
-        while (i < getHeight()) {
-            int j = getHeight();
+        while (i < height) {
+            int j = height;
             while (j > i + 1) {
                 pyramid += " ";
                 j--;
             }
             j = i;
             while (j >= 0) {
-                pyramid += height++;
+                pyramid += currHeight++;
                 j--;
             }
-            height = 1;
+            currHeight = 1;
             i++;
             pyramid += "\n";
         }
