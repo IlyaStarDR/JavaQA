@@ -7,7 +7,11 @@ public class Books {
     private int counter;
 
     public Books(int length) {
-        listOfBooks = new Book[length];
+        if (length >= 0) {
+            listOfBooks = new Book[length];
+        } else {
+            System.out.println("The length of array is negative");
+        }
     }
 
     public void viewAll() {
@@ -27,28 +31,29 @@ public class Books {
         }
     }
 
-    public void changePrice() {
+    public void changePriceUp() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter + or - : ");
-        char plusOrMinus = scanner.next().charAt(0);
-        System.out.print("and percent: ");
         double percent = scanner.nextDouble();
         for (Book element : listOfBooks) {
-            if (plusOrMinus == '+' && element != null) {
+            if (element != null) {
                 element.setPrice(element.getPrice() + element.getPrice() * percent / 100);
             }
-            if (plusOrMinus == '-' && element != null) {
+        }
+    }
+
+    public void changePriceDown() {
+        Scanner scanner = new Scanner(System.in);
+        double percent = scanner.nextDouble();
+        for (Book element : listOfBooks) {
+            if (element != null) {
                 element.setPrice(element.getPrice() - element.getPrice() * percent / 100);
             }
-
         }
     }
 
     public Books searchAuthor() {
         Books books = new Books(listOfBooks.length);
-
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter name of author: ");
         String author = scanner.nextLine();
         for (Book element : listOfBooks) {
             if (element != null && element.getAuthor().equals(author)) {
@@ -69,7 +74,6 @@ public class Books {
         int counter = 0;
         Books books = new Books(listOfBooks.length);
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter year: ");
         int year = scanner.nextInt();
         for (Book element : listOfBooks) {
             if (element != null && element.getYearOfPublishing() > year) {
