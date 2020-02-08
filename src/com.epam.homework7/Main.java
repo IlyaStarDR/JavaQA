@@ -46,17 +46,21 @@ public class Main {
         return total;
     }
 
+
     public static double getShapeArea(Shape[] array, Shape object) {
         double total = 0;
         for (Shape figure : array) {
             if (figure.getClass().equals(object.getClass())) {
                 total += figure.CalcArea();
             }
-//            String stringClass = object.getClass().getSimpleName();
+            //  **
+        }
+//  **        String stringClass = object.getClass().getSimpleName();
 //            if (stringClass.equals(figure.getClass().getSimpleName())) {
 //                total += figure.CalcArea();
 //            }
-        }
         return total;
+
     }
 }
+
