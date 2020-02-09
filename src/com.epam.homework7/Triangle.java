@@ -13,7 +13,7 @@ public class Triangle extends Shape {
     }
 
     @Override
-    public double CalcArea() {
+    public double calcArea() {
         double hP = (a + b + c) / 2;
         return Math.sqrt(hP * (hP - a) * (hP - b) * (hP - c));
     }

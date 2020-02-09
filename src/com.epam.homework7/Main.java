@@ -1,5 +1,6 @@
 package com.epam.homework7;
 
+
 public class Main {
     public static void main(String[] args) {
 
@@ -34,14 +35,14 @@ public class Main {
     public static void printArea(Shape[] array) {
         for (Shape figure : array) {
             System.out.printf(figure.getClass().getSimpleName() + " "
-                    + figure.getColor() + ": area --- %.2f" + "\n", figure.CalcArea());
+                    + figure.getColor() + ": area --- %.2f" + "\n", figure.calcArea());
         }
     }
 
     public static double getTotalArea(Shape[] array) {
         double total = 0;
         for (Shape figure : array) {
-            total += figure.CalcArea();
+            total += figure.calcArea();
         }
         return total;
     }
@@ -51,7 +52,7 @@ public class Main {
         double total = 0;
         for (Shape figure : array) {
             if (figure.getClass().equals(object.getClass())) {
-                total += figure.CalcArea();
+                total += figure.calcArea();
             }
             //  **
         }
