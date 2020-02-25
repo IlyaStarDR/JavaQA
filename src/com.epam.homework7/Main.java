@@ -55,6 +55,7 @@ public class Main {
                 total += figure.calcArea();
             }
             //  **
+
         }
 //  **        String stringClass = object.getClass().getSimpleName();
 //            if (stringClass.equals(figure.getClass().getSimpleName())) {

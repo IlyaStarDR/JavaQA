@@ -6,11 +6,11 @@ import com.epam.homework8.comparator.PublisherComparator;
 import com.epam.homework8.exception.EmptyArrayRuntimeException;
 import com.epam.homework8.validator.Validator;
 
+import java.io.Serializable;
 import java.util.Arrays;
-import java.util.InputMismatchException;
-import java.util.NoSuchElementException;
 
-public class Books implements Cloneable {
+
+public class Books implements Cloneable, Serializable {
     private Book[] listOfBooks;
     private int counter;
 

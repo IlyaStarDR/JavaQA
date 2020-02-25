@@ -1,6 +1,8 @@
 package com.epam.homework8.books;
 
-public class Book implements Cloneable {
+import java.io.Serializable;
+
+public class Book implements Cloneable, Serializable {
     private int id;
     private String nameOfBook;
     private String author;

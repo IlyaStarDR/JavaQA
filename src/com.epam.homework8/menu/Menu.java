@@ -3,20 +3,22 @@ package com.epam.homework8.menu;
 import com.epam.homework8.books.Book;
 import com.epam.homework8.books.Books;
 import com.epam.homework8.exception.EmptyArrayRuntimeException;
+import com.epam.homework8.filerw.FileUtil;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
-    private Books books;
+    Books books;
 
-    public Menu(Books books) {
-        this.books = books;
+    public Menu() {
+
     }
+
 
     public void menuUser() throws CloneNotSupportedException {
         Scanner in = new Scanner(System.in);
-        Books booksCloned = getClonedBook();
+
 
         System.out.println("menu");
 
@@ -41,6 +43,7 @@ public class Menu {
 
 
         switch (choice) {
+
             case 1:
                 try {
                     books.viewAll();
@@ -51,12 +54,16 @@ public class Menu {
             case 2:
                 addBookViaScanner();
                 books.viewAll();
+
                 break;
             case 3:
                 try {
                     System.out.println("Enter percent to increase price");
                     books.changePrice(in.nextDouble(), '+');
                     books.viewAll();
+
+                    System.out.println(" ");
+
                 } catch (IllegalArgumentException | EmptyArrayRuntimeException e) {
                     System.out.println(e.getMessage());
                 }
@@ -89,30 +96,36 @@ public class Menu {
                 break;
             case 7:
                 try {
-                    booksCloned.getNameOfAuthorCompared();
-                    booksCloned.viewAll();
+                    getClonedBook().getNameOfAuthorCompared();
+                    getClonedBook().viewAll();
                 } catch (EmptyArrayRuntimeException e) {
                     System.out.println(e.getMessage());
                 }
                 break;
             case 8:
                 try {
-                    booksCloned.getPublishingHouseCompared();
-                    booksCloned.viewAll();
+                    getClonedBook().getPublishingHouseCompared();
+                    getClonedBook().viewAll();
                 } catch (EmptyArrayRuntimeException e) {
                     System.out.println(e.getMessage());
                 }
                 break;
             case 9:
                 try {
-                    booksCloned.getPriceCompared();
-                    booksCloned.viewAll();
+                    getClonedBook().getPriceCompared();
+                    getClonedBook().viewAll();
                 } catch (EmptyArrayRuntimeException e) {
                     System.out.println(e.getMessage());
                 }
                 break;
             case 10:
-                System.exit(0);
+                try {
+                    saveBooks();
+                } catch (EmptyArrayRuntimeException e) {
+                    System.out.println(e.getMessage());
+                } finally {
+                    System.exit(0);
+                }
         }
         menuUser();
 
@@ -133,5 +146,23 @@ public class Menu {
         } catch (IllegalArgumentException | IndexOutOfBoundsException e) {
             System.out.println("Wrong input try again");
         }
+    }
+
+    public void initDataFromFile() {
+        try {
+            Scanner in = new Scanner(System.in);
+            System.out.println("Enter file name...");
+            FileUtil.fileName = in.nextLine();
+            books = FileUtil.readData();
+        } catch (Exception e) {
+            new Menu();
+        }
+    }
+
+    private void saveBooks() {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter file name...");
+        FileUtil.fileName = in.nextLine();
+        FileUtil.writeData();
     }
 }
